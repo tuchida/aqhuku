@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+
+<overlay id="aqhuku"
+	 xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/x-javascript" src="utils.js" />
+  <script type="application/x-javascript" src="const.js" />
+  <script type="application/x-javascript" src="ahNavi.js" />
+  <script type="application/x-javascript" src="aqhuku.js" />
+
+  <menupopup id="menu_ToolsPopup">
+    <menuitem id="aqhuku-tools-preferences"
+              insertafter="devToolsSeparator"
+              label="aqhuku 設定"
+              oncommand="ah.showPreferences(arguments[0]);" />
+  </menupopup>
+
+  <menubar id="main-menubar">
+    <menu id="aqhuku-menu-aquanavi"
+          insertbefore="helpMenu"
+          disabled="true"
+          label="aquaナビ">
+      <menupopup />
+    </menu>
+  </menubar>
+
+  <popup id="contentAreaContextMenu">
+    <menuseparator id="aqhuku-menuitem-content-separator0"
+                   hidden="true" />
+    <menuitem id="aqhuku-menuitem-content-add-link" label="個人リンク集に追加" 
+	      oncommand="ah.addLink();"
+              hidden="true" />
+  </popup>
+
+</overlay>

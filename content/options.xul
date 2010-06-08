@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<dialog class="dialog"
+        id="aqhuku_preferences_dialog"
+        title="aqhuku 設定"
+        persist="screenX screenY"
+        buttons="accept,cancel,extra1"
+        onload="ahOptions.init();"
+        ondialogaccept="return ahOptions.term();"
+        orient="vertical"
+        flex="1"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/x-javascript" src="const.js" />
+  <script type="application/x-javascript" src="utils.js" />
+  <script type="application/x-javascript" src="options.js" />
+
+  <groupbox>
+    <caption label="AAEサーバー情報" />
+    <label control="server_url" value="AAEのURL" />
+    <textbox id="server_url" />
+    <label control="user_id" value="ユーザーID(数値)" />
+    <textbox id="user_id" />
+  </groupbox>
+  <groupbox>
+    <caption label="ナビゲーション" />
+    <checkbox id="aqua_navi" label="有効にする" checked="true" />
+  </groupbox>
+</dialog>
