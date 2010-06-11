@@ -13,10 +13,12 @@ ahNavi = {
     items.forEach(ahUtils.bind(this.createMenuItem, this, naviMenu.menupopup));
   },
 
-  onMenuItemClick: function(uri, event) {
-    Application.activeWindow.open(ahUtils.asUri(uri)).focus();
-    event.stopPropagation();
-    return false;
+  openUri: function(uri, replace) {
+    if (replace) {
+      Application.activeWindow.activeTab.load(ahUtils.asUri(uri));
+    } else {
+      Application.activeWindow.open(ahUtils.asUri(uri)).focus();
+    }
   },
 
   findMenuItems: function(targetDocument) {
@@ -74,19 +76,37 @@ ahNavi = {
     if (item.cascade && item.cascade.length > 0) {
       let menu = document.createElementNS(ahConst.XULNS, 'menu');
       menu.setAttribute('label', item.title);
+      menu.addEventListener('click', ahUtils.bind(function(event) {
+        if (event.button == 0) {
+          this.openUri(item.href, true);
+          return false;
+        } else if (event.button == 1) {
+          this.openUri(item.href, false);
+          return false;
+        }
+        return true;
+      }, this), false);
+
       let menupopup = document.createElementNS(ahConst.XULNS, 'menupopup');
       menu.appendChild(menupopup);
       parentMenu.appendChild(menu);
-      parentMenu = menupopup;
-    }
 
-    let menuItem = document.createElementNS(ahConst.XULNS, 'menuitem');
-    menuItem.setAttribute('label', item.title);
-    menuItem.addEventListener("command", ahUtils.bind(this.onMenuItemClick, this, item.href), false);
-    parentMenu.appendChild(menuItem);
-
-    if (item.cascade && item.cascade.length > 0) {
-      item.cascade.forEach(ahUtils.bind(this.createMenuItem, this, parentMenu));
+      item.cascade.forEach(ahUtils.bind(this.createMenuItem, this, menupopup));
+    } else {
+      let menuItem = document.createElementNS(ahConst.XULNS, 'menuitem');
+      menuItem.setAttribute('label', item.title);
+      menuItem.addEventListener('command', ahUtils.bind(function(event) {
+        this.openUri(item.href, true);
+        return false;
+      }), false);
+      menuItem.addEventListener('click', ahUtils.bind(function(event) {
+        if (event.button == 1) {
+          this.openUri(item.href, false);
+          return false;
+        }
+        return true;
+      }, this), false);
+      parentMenu.appendChild(menuItem);
     }
   },
 
