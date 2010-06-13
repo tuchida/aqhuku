@@ -98,7 +98,7 @@ ahNavi = {
       menuItem.addEventListener('command', ahUtils.bind(function(event) {
         this.openUri(item.href, true);
         return false;
-      }), false);
+      }, this), false);
       menuItem.addEventListener('click', ahUtils.bind(function(event) {
         if (event.button == 1) {
           this.openUri(item.href, false);
@@ -111,7 +111,7 @@ ahNavi = {
   },
 
   applyPrefs: function() {
-    let naviMenu = document.getElementById('menu_AquaNavi');
+    let naviMenu = document.getElementById('aqhuku-menu-aquanavi');
     let isValidPrefs =
       ahUtils.getPrefValue(ahConst.prefs.SERVER_URL, '') &&
       ahUtils.getPrefValue(ahConst.prefs.AQUA_NAVI, true);

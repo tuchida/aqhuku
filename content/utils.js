@@ -73,7 +73,7 @@ ahUtils = {
 
   // ref. http://code.google.com/p/closure-library/source/browse/trunk/closure/goog/base.js
   bind: function(fn, selfObj, var_args) {
-    var context = selfObj || goog.global;
+    var context = selfObj || window;
 
     if (arguments.length > 2) {
       var boundArgs = Array.prototype.slice.call(arguments, 2);
@@ -115,5 +115,20 @@ ahUtils = {
       }
       return text;
     }, '');
+  },
+
+  isFunction: function(o) {
+    return o != null && o.constructor == Function;
+  },
+
+  documentEval: function(doc, script) {
+    let el = doc.createElement('script');
+    el.type = 'text/javascript';
+    if (!ahUtils.isFunction(script)) {
+      script = new Function(script);
+    }
+    el.appendChild(doc.createTextNode('(' + script + ')()'));
+    doc.body.appendChild(el);
+    doc.body.removeChild(el);
   }
 };
