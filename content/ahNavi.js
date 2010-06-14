@@ -29,7 +29,7 @@ ahNavi = {
       let links = sidebarEl.getElementsByTagName('a');
       for (let i = 0, link; link = links[i]; i++) {
         if (this.validUrl(link.href)) {
-          let title = ahUtils.concatTextNode(link);
+          let title = ahUtils.firstTextNode(link);
           let [gadgetId, gadgetTitle] = this._getGadget(link, gadgets);
 
           let cascadeText = link.getAttribute('onmouseover');
@@ -79,9 +79,11 @@ ahNavi = {
       menu.addEventListener('click', ahUtils.bind(function(event) {
         if (event.button == 0) {
           this.openUri(item.href, true);
+          event.stopPropagation();
           return false;
         } else if (event.button == 1) {
           this.openUri(item.href, false);
+          event.stopPropagation();
           return false;
         }
         return true;
@@ -97,11 +99,13 @@ ahNavi = {
       menuItem.setAttribute('label', item.title);
       menuItem.addEventListener('command', ahUtils.bind(function(event) {
         this.openUri(item.href, true);
+        event.stopPropagation();
         return false;
       }, this), false);
       menuItem.addEventListener('click', ahUtils.bind(function(event) {
         if (event.button == 1) {
           this.openUri(item.href, false);
+          event.stopPropagation();
           return false;
         }
         return true;

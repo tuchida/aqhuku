@@ -56,8 +56,17 @@ ahUtils = {
     return this._nsIIOService.newURI(uri, null, baseURI);
   },
 
+  concatTextNode: function(el) {
+    return ahUtils.reduceNodes(el, function(el, text) {
+      if (ahUtils.isTextNode(el)) {
+        text += el.nodeValue;
+      }
+      return text;
+    }, '');
+  },
+
   reduceNodes: function(el, p, val) {
-    var rval = val;
+    let rval = val;
     if (el) {
       for (let i = 0, child; child = el.childNodes[i]; i++) {
         rval = p(child, rval);
@@ -108,13 +117,22 @@ ahUtils = {
     return names ? names.split(/\s+/).indexOf(className) >= 0 : false;
   },
 
-  concatTextNode: function(el) {
-    return ahUtils.reduceNodes(el, function(el, text) {
-      if (ahUtils.isTextNode(el)) {
-        text += el.nodeValue;
+  reduceNodes: function(el, p, val) {
+    var rval = val;
+    if (el) {
+      for (let i = 0, child; child = el.childNodes[i]; i++) {
+        rval = p(child, rval);
+        rval = this.reduceNodes(child, p, rval);
       }
-      return text;
-    }, '');
+    }
+    return rval;
+  },
+
+  firstTextNode: function(el) {
+    let textNode = ahUtils.findNode(el, function(el) {
+       return ahUtils.isTextNode(el) && !!el.nodeValue;
+    });
+    return textNode ? textNode.nodeValue : '';
   },
 
   isFunction: function(o) {
@@ -130,5 +148,27 @@ ahUtils = {
     el.appendChild(doc.createTextNode('(' + script + ')()'));
     doc.body.appendChild(el);
     doc.body.removeChild(el);
+  },
+
+  findNode: function(el, p) {
+    if (el) {
+      for (let i = 0, child; child = el.childNodes[i]; i++) {
+        if (p(child)) {
+          return child;
+        }
+        let foundNode = ahUtils.findNode(child, p);
+        if (foundNode) {
+          return foundNode;
+        }
+      }
+    }
+    return null;
+  },
+
+  firstTextNode: function(el) {
+    let textNode = ahUtils.findNode(el, function(el) {
+       return ahUtils.isTextNode(el) && !!el.nodeValue;
+    });
+    return textNode ? textNode.nodeValue : '';
   }
 };
