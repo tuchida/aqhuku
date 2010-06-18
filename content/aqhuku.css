@@ -1,0 +1,415 @@
+#aqhuku-menu-aquanavi menu {
+  -moz-binding: url("chrome://global/content/bindings/menu.xml#menu-iconic");
+}
+
+#aqhuku-menu-aquanavi menuitem {
+  -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic");
+}
+
+.ico-portal {
+  list-style-image: url("chrome://aqhuku/content/images/ico_portal.png");
+}
+
+.ico-portal-group {
+  list-style-image: url("chrome://aqhuku/content/images/ico_portal_group.png");
+}
+
+.ico-portal-personal {
+  list-style-image: url("chrome://aqhuku/content/images/ico_portal_personal.png");
+}
+
+.ico-onlinestatus-active {
+  list-style-image: url("chrome://aqhuku/content/images/ico_onlinestatus_active.png");
+}
+
+.ico-onlinestatus-away {
+  list-style-image: url("chrome://aqhuku/content/images/ico_onlinestatus_away.png");
+}
+
+.ico-onlinestatus-offline {
+  list-style-image: url("chrome://aqhuku/content/images/ico_onlinestatus_offline.png");
+}
+
+.ico-onlinestatus-out {
+  list-style-image: url("chrome://aqhuku/content/images/ico_onlinestatus_out.png");
+}
+
+.ico-schedule {
+  list-style-image: url("chrome://aqhuku/content/images/ico_schedule.png");
+}
+
+.ico-schedule-day {
+  list-style-image: url("chrome://aqhuku/content/images/ico_sche_day.png");
+}
+
+.ico-schedule-week {
+  list-style-image: url("chrome://aqhuku/content/images/ico_sche_week.png");
+}
+
+.ico-schedule-month {
+  list-style-image: url("chrome://aqhuku/content/images/ico_sche_month.png");
+}
+
+.ico-report {
+  list-style-image: url("chrome://aqhuku/content/images/ico_report.png");
+}
+
+.ico-facility {
+  list-style-image: url("chrome://aqhuku/content/images/ico_facility.png");
+}
+
+.ico-child-facility {
+  list-style-image: url("chrome://aqhuku/content/images/ico_create_child_facility.png");
+}
+
+.ico-needs-action-facility {
+  list-style-image: url("chrome://aqhuku/content/images/ico_needs_action_facility.png");
+}
+
+.ico-facility-list  {
+  list-style-image: url("chrome://aqhuku/content/images/ico_facility_list.png");
+}
+
+.ico-facility-needs-action {
+  list-style-image: url("chrome://aqhuku/content/images/ico_facility_needs_action.png");
+}
+
+.ico-facility-state {
+  list-style-image: url("chrome://aqhuku/content/images/ico_facility_state.png");
+}
+
+.ico-address {
+  list-style-image: url("chrome://aqhuku/content/images/ico_address.png");
+}
+
+.ico-address-doc {
+  list-style-image: url("chrome://aqhuku/content/images/ico_address_doc.png");
+}
+
+.ico-task {
+  list-style-image: url("chrome://aqhuku/content/images/ico_task.png");
+}
+
+.ico-task-request {
+  list-style-image: url("chrome://aqhuku/content/images/ico_task_request.png");
+}
+
+.ico-task-person {
+  list-style-image: url("chrome://aqhuku/content/images/ico_task_person.png");
+}
+
+.ico-discussion {
+  list-style-image: url("chrome://aqhuku/content/images/ico_discussion.png");
+}
+
+.ico-blog {
+  list-style-image: url("chrome://aqhuku/content/images/ico_blog.png");
+}
+
+.ico-information {
+  list-style-image: url("chrome://aqhuku/content/images/ico_information.png");
+}
+
+.ico-informationtemplate {
+  list-style-image: url("chrome://aqhuku/content/images/ico_informationtemplate.png");
+}
+
+.ico-link {
+  list-style-image: url("chrome://aqhuku/content/images/ico_link.png");
+}
+
+.ico-mygroup {
+  list-style-image: url("chrome://aqhuku/content/images/ico_mygroup.png");
+}
+
+.ico-memo {
+  list-style-image: url("chrome://aqhuku/content/images/ico_memo.png");
+}
+
+.ico-message {
+  list-style-image: url("chrome://aqhuku/content/images/ico_message.png");
+}
+
+.ico-filemanage {
+  list-style-image: url("chrome://aqhuku/content/images/ico_filemanage.png");
+}
+
+.ico-linkdoc {
+  list-style-image: url("chrome://aqhuku/content/images/ico_linkdoc.png");
+}
+
+.ico-linkdoc-other-window {
+  list-style-image: url("chrome://aqhuku/content/images/ico_linkdoc_other_window.png");
+}
+
+.ico-whatsnew {
+  list-style-image: url("chrome://aqhuku/content/images/ico_whatsnew.png");
+}
+
+.ico-group {
+  list-style-image: url("chrome://aqhuku/content/images/ico_group.png");
+}
+
+.ico-workgroup {
+  list-style-image: url("chrome://aqhuku/content/images/ico_workgroup.png");
+}
+
+.ico-rolegroup {
+  list-style-image: url("chrome://aqhuku/content/images/ico_rolegroup.png");
+}
+
+.ico-child-group {
+  list-style-image: url("chrome://aqhuku/content/images/ico_create_child_group.png");
+}
+
+.ico-child-workgroup {
+  list-style-image: url("chrome://aqhuku/content/images/ico_create_child_workgroup.png");
+}
+
+.ico-child-rolegroup {
+  list-style-image: url("chrome://aqhuku/content/images/ico_create_child_rolegroup.png");
+}
+
+.ico-obsoletegroup {
+  list-style-image: url("chrome://aqhuku/content/images/ico_obsoletegroup.png");
+}
+
+.ico-obsoleteworkgroup {
+  list-style-image: url("chrome://aqhuku/content/images/ico_obsoleteworkgroup.png");
+}
+
+.ico-obsoleterolegroup {
+  list-style-image: url("chrome://aqhuku/content/images/ico_obsoleterolegroup.png");
+}
+
+.ico-userlist {
+  list-style-image: url("chrome://aqhuku/content/images/ico_userlist.png");
+}
+
+.ico-bookmark {
+  list-style-image: url("chrome://aqhuku/content/images/ico_bookmark.png");
+}
+
+.ico-bookmark-app {
+  list-style-image: url("chrome://aqhuku/content/images/ico_bookmark_app.png");
+}
+
+.ico-bookmark-app-personal {
+  list-style-image: url("chrome://aqhuku/content/images/ico_bookmark_app.png");
+}
+
+.ico-bookmark-app-group {
+  list-style-image: url("chrome://aqhuku/content/images/ico_bookmark_app.png");
+}
+
+.ico-bookmark-doc {
+  list-style-image: url("chrome://aqhuku/content/images/ico_bookmark_doc.png");
+}
+
+.ico-bookmark-app-create {
+  list-style-image: url("chrome://aqhuku/content/images/ico_bookmark_app_create.png");
+}
+
+.ico-bookmark-doc-create {
+  list-style-image: url("chrome://aqhuku/content/images/ico_bookmark_doc_create.png");
+}
+
+.ico-bookmark-app-view {
+  list-style-image: url("chrome://aqhuku/content/images/ico_bookmark_view.png");
+}
+
+.ico-bookmark-app-config {
+  list-style-image: url("chrome://aqhuku/content/images/ico_bookmark_view.png");
+}
+
+.ico-setting {
+  list-style-image: url("chrome://aqhuku/content/images/ico_setting.png");
+}
+
+.ico-job-management {
+  list-style-image: url("chrome://aqhuku/content/images/ico_setting.png");
+}
+
+.ico-labelsetting {
+  list-style-image: url("chrome://aqhuku/content/images/ico_labelsetting.png");
+}
+
+.ico-appsetting {
+  list-style-image: url("chrome://aqhuku/content/images/ico_appsetting.png");
+}
+
+.ico-reserveconfig {
+  list-style-image: url("chrome://aqhuku/content/images/ico_reserveconfig.png");
+}
+
+.ico-portal-initialsetting {
+  list-style-image: url("chrome://aqhuku/content/images/ico_portal_initialsetting.png");
+}
+
+.ico-data-management {
+  list-style-image: url("chrome://aqhuku/content/images/ico_data_management.png");
+}
+
+.ico-archive-data {
+  list-style-image: url("chrome://aqhuku/content/images/ico_archive_data.png");
+}
+
+.ico-delete-data {
+  list-style-image: url("chrome://aqhuku/content/images/ico_delete_data.png");
+}
+
+.ico-remove-history {
+  list-style-image: url("chrome://aqhuku/content/images/ico_remove_history.png");
+}
+
+.ico-rebuildIndex {
+  list-style-image: url("chrome://aqhuku/content/images/ico_rebuildIndex.png");
+}
+
+.ico-sortorder {
+  list-style-image: url("chrome://aqhuku/content/images/ico_sortorder.png");
+}
+
+.ico-analysis {
+  list-style-image: url("chrome://aqhuku/content/images/ico_analysis.png");
+}
+
+.ico-accesslog {
+  list-style-image: url("chrome://aqhuku/content/images/ico_accesslog.png");
+}
+
+.ico-ranking {
+  list-style-image: url("chrome://aqhuku/content/images/ico_ranking.png");
+}
+
+.ico-schemalist {
+  list-style-image: url("chrome://aqhuku/content/images/ico_schemalist.png");
+}
+
+.ico-workflow {
+  list-style-image: url("chrome://aqhuku/content/images/ico_workflow.png");
+}
+
+.ico-sysconf {
+  list-style-image: url("chrome://aqhuku/content/images/ico_setting.png");
+}
+
+.ico-import {
+  list-style-image: url("chrome://aqhuku/content/images/ico_import.png");
+}
+
+.ico-holiday {
+  list-style-image: url("chrome://aqhuku/content/images/ico_holiday.png");
+}
+
+.ico-messagetemplate {
+  list-style-image: url("chrome://aqhuku/content/images/ico_messagetemplate.png");
+}
+
+.ico-webpage {
+  list-style-image: url("chrome://aqhuku/content/images/ico_webpage.png");
+}
+
+.ico-web {
+  list-style-image: url("chrome://aqhuku/content/images/ico_web.png");
+}
+
+.ico-rssfeed {
+  list-style-image: url("chrome://aqhuku/content/images/ico_rss.png");
+}
+
+.ico-gadget {
+  list-style-image: url("chrome://aqhuku/content/images/ico_gadget.png");
+}
+
+.ico-setlogin {
+  list-style-image: url("chrome://aqhuku/content/images/ico_setlogin.png");
+}
+
+.ico-anonymous {
+  list-style-image: url("chrome://aqhuku/content/images/ico_anonymous.png");
+}
+
+.ico-rich-portlet {
+  list-style-image: url("chrome://aqhuku/content/images/ico_rich_portlet.png");
+}
+
+.ico-mail {
+  list-style-image: url("chrome://aqhuku/content/images/ico_mail.png");
+}
+
+.ico-mail-group {
+  list-style-image: url("chrome://aqhuku/content/images/ico_mail_group.png");
+}
+
+.ico-appsearch {
+  list-style-image: url("chrome://aqhuku/content/images/ico_appsearch.png");
+}
+
+.ico-recentapp {
+  list-style-image: url("chrome://aqhuku/content/images/ico_recentapp.png");
+}
+
+.ico-sethistory {
+  list-style-image: url("chrome://aqhuku/content/images/ico_read.png");
+}
+
+.ico-resethistory {
+  list-style-image: url("chrome://aqhuku/content/images/ico_unread.png");
+}
+
+.ico-othermenu {
+  list-style-image: url("chrome://aqhuku/content/images/ico_othermenu.png");
+}
+
+.ico-property {
+  list-style-image: url("chrome://aqhuku/content/images/ico_property.png");
+}
+
+.ico-blog-ranking {
+  list-style-image: url("chrome://aqhuku/content/images/ico_blog_ranking.png");
+}
+
+.ico-create-child {
+  list-style-image: url("chrome://aqhuku/content/images/ico_create_child.png");
+}
+
+.ico-footmark {
+  list-style-image: url("chrome://aqhuku/content/images/ico_footmark.png");
+}
+
+.ico-draft {
+  list-style-image: url("chrome://aqhuku/content/images/ico_draft.png");
+}
+
+.ico-recent {
+  list-style-image: url("chrome://aqhuku/content/images/ico_read.png");
+}
+
+.ico-report-template {
+  list-style-image: url("chrome://aqhuku/content/images/ico_report.png");
+}
+
+.ico-news-reader {
+  list-style-image: url("chrome://aqhuku/content/images/ico_news_reader.png");
+}
+
+.ico-maillist {
+  list-style-image: url("chrome://aqhuku/content/images/ico_maillist.png");
+}
+
+.ico-qa-close {
+  list-style-image: url("chrome://aqhuku/content/images/ico_qa_close.png");
+}
+
+.ico-export {
+  list-style-image: url("chrome://aqhuku/content/images/ico_export.png");
+}
+
+.ico-publish {
+  list-style-image: url("chrome://aqhuku/content/images/ico_doc.png");
+}
+
+.ico-user {
+  list-style-image: url("chrome://aqhuku/content/images/ico_user.png");
+}

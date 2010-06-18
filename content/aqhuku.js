@@ -17,6 +17,7 @@ ah = {
     }
 
     ahNavi.applyPrefs();
+    ahNavi.createLastMenuItems();
     let extension = Application.extensions.get(ahConst.DOMAIN);
     extension.prefs.events.addListener('change', this.onPrefChange);
   },

@@ -4,7 +4,7 @@ ahUtils = {
   },
 
   endsWith: function(str, suffix) {
-    var l = str.length - suffix.length;
+    let l = str.length - suffix.length;
     return l >= 0 && str.indexOf(suffix, l) == l;
   },
 
@@ -118,7 +118,7 @@ ahUtils = {
   },
 
   reduceNodes: function(el, p, val) {
-    var rval = val;
+    let rval = val;
     if (el) {
       for (let i = 0, child; child = el.childNodes[i]; i++) {
         rval = p(child, rval);
@@ -126,13 +126,6 @@ ahUtils = {
       }
     }
     return rval;
-  },
-
-  firstTextNode: function(el) {
-    let textNode = ahUtils.findNode(el, function(el) {
-       return ahUtils.isTextNode(el) && !!el.nodeValue;
-    });
-    return textNode ? textNode.nodeValue : '';
   },
 
   isFunction: function(o) {

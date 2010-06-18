@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<?xml-stylesheet href="aqhuku.css" type="text/css"?>
 
 <overlay id="aqhuku"
 	 xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
@@ -20,7 +21,7 @@
     <menu id="aqhuku-menu-aquanavi"
           insertbefore="helpMenu"
           disabled="true"
-          label="aquaナビ">
+          label="AAEナビ">
       <menupopup />
     </menu>
   </menubar>

@@ -24,7 +24,7 @@
     <textbox id="user_id" />
   </groupbox>
   <groupbox>
-    <caption label="ナビゲーション" />
+    <caption label="AAEナビ" />
     <checkbox id="aqua_navi" label="有効にする" checked="true" />
   </groupbox>
 </dialog>
