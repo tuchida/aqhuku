@@ -17,13 +17,13 @@
   <script type="application/x-javascript" src="customizeShortcuts.js" />
 
   <hbox flex="60" >
-    <tree id="aquanavi_tree" flex="90" hidecolumnpicker="true" seltype="single" class="tree" rows="5">
+    <tree id="aquanavi_tree" flex="90" hidecolumnpicker="true" seltype="single" lastSelected="0" persist="lastSelected">
       <treecols>
-        <treecol primary="true" flex="2" label="項目名" persist="width" ordinal="1"/>
+        <treecol primary="true" flex="1" label="項目名" persist="width" ordinal="1"/>
         <splitter class="tree-splitter" ordinal="2"/>
-        <treecol flex="1" label="URL" persist="width" ordinal="3"/>
+        <treecol label="URL" flex="2" persist="width" ordinal="3"/>
       </treecols>
-      <treechildren />
+      <treechildren/>
     </tree>
     <vbox flex="10" align="left">
       <label control="input_key" value="キー" />
@@ -42,14 +42,14 @@
         </columns>
         <rows>
           <row>
-            <checkbox id="shortcut_modifiers_alt" checked="false" label="Alt" flex="1" />
-            <checkbox id="shortcut_modifiers_ctrl" checked="false" label="Ctrl" flex="1" />
+            <checkbox id="shortcut_modifiers_alt" checked="false" label="Alt" />
+            <checkbox id="shortcut_modifiers_ctrl" checked="false" label="Ctrl" />
           </row>
           <row>
-            <checkbox id="shortcut_modifiers_meta" checked="false" label="Meta" flex="1" />
-            <checkbox id="shortcut_modifiers_shift" checked="false" label="Shift" flex="1" />
+            <checkbox id="shortcut_modifiers_meta" checked="false" label="Meta" />
+            <checkbox id="shortcut_modifiers_shift" checked="false" label="Shift" />
           </row>
-          </rows>
+        </rows>
       </grid>
       <spacer />
       <label control="shortcut_open_type" value="開き方" />
