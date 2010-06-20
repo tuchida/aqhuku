@@ -9,7 +9,7 @@
         onload="ahCustomizeShortcuts.init();"
         ondialogaccept="return ahCustomizeShortcuts.term();"
         orient="vertical"
-        flex="1"
+        flex="1" width="600px" height="400px"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
   <script type="application/x-javascript" src="const.js" />

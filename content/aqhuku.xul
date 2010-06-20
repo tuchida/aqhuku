@@ -11,14 +11,14 @@
   <script type="application/x-javascript" src="aqhuku.js" />
 
   <menupopup id="menu_ToolsPopup">
+    <menuitem id="aqhuku-tools-customize-shortcut"
+              insertafter="devToolsSeparator"
+              label="aqhuku ショートカット設定"
+              oncommand="ah.showCustomizeShortcuts(arguments[0]);"/>
     <menuitem id="aqhuku-tools-preferences"
               insertafter="devToolsSeparator"
               label="aqhuku 設定"
               oncommand="ah.showPreferences(arguments[0]);" />
-    <menuitem id="aqhuku-tools-customize-shortcut"
-              label="aqhuku ショートカット設定"
-              oncommand="ah.showCustomizeShortcuts(arguments[0]);"
-              style="display:none;" />
   </menupopup>
 
   <menubar id="main-menubar">
