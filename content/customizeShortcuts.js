@@ -44,7 +44,8 @@ ahCustomizeShortcuts = {
       href: item.href,
       level: level,
       parentIndex: parentIndex,
-      hasNext: hasNext
+      hasNext: hasNext,
+      isContainer: !!item.cascade && item.cascade.length > 0
     });
     if (item.cascade) {
       this._expandItems(item.cascade, level + 1, index);
@@ -83,8 +84,13 @@ ahCustomizeShortcuts = {
 
   addShortcut: function(scItem) {
     let list = document.getElementById('shortcuts');
-    let listitem = list.appendItem(scItem.title, JSON.stringify(scItem));
-    let cell = document.createElementNS(ahConst.XULNS, 'listcell');
+    let listItem = document.createElementNS(ahConst.XULNS, 'listitem');
+    listItem.setAttribute('value', JSON.stringify(scItem));
+    let cell1 = document.createElementNS(ahConst.XULNS, 'listcell');
+    cell1.setAttribute('label', scItem.title);
+    let cell2 = document.createElementNS(ahConst.XULNS, 'listcell');
+    cell2.setAttribute('label', scItem.href);
+    let cell3 = document.createElementNS(ahConst.XULNS, 'listcell');
     let s = '';
     if (scItem.shortcut.modifiers.indexOf('alt') >= 0) {
       s += 'Alt + ';
@@ -99,8 +105,12 @@ ahCustomizeShortcuts = {
       s += 'Shift + ';
     }
     s += scItem.shortcut.key.replace(/^VK_/, '');
-    cell.setAttribute('label', s);
-    listitem.appendChild(cell);
+    cell3.setAttribute('label', s);
+
+    listItem.appendChild(cell1);
+    listItem.appendChild(cell2);
+    listItem.appendChild(cell3);
+    list.appendChild(listItem);
   },
 
   onSaveShortcutKeyDown: function(event) {
@@ -122,8 +132,8 @@ ahCustomizeShortcuts = {
       document.getElementById('shortcut_modifiers_shift').checked = event.shiftKey;
     }
 
-    event.preventDefault ();
-    event.stopPropagation ();
+    event.preventDefault();
+    event.stopPropagation();
   },
 
   onAddShortcut: function(event) {
@@ -188,15 +198,17 @@ ahCustomizeShortcuts.AquaNaviTreeView.prototype = {
   getRowProperties: function(index, properties) {},
   getCellProperties: function(row, col, properties) {},
   getColumnProperties: function(col, properties) {},
-  isContainer: function(index) { return false; },
-  isContainerOpen: function(index) { return false; },
-  isContainerEmpty: function(index) { return false; },
-  isSeparator: function(index) {
-    return this._treeItems[index] == null;
+  isContainer: function(row) {
+    return this._treeItems[row].isContainer;
   },
+  isContainerOpen: function(row) {
+    return this._treeItems[row].isContainer;
+  },
+  isContainerEmpty: function(row) { return false; },
+  isSeparator: function(index) { return false; },
   isSorted: function() { return false; },
-  canDrop: function(targetIndex, orientation) { return false; },
-  drop: function(targetIndex, orientation) {},
+  canDrop: function(row, orientation) { return false; },
+  drop: function(row, orientation) {},
   getParentIndex: function(row) {
     return this._treeItems[row].parentIndex;
   },
@@ -206,9 +218,9 @@ ahCustomizeShortcuts.AquaNaviTreeView.prototype = {
   getLevel: function(row) {
     return this._treeItems[row].level;
   },
-  getImageSrc: function(row, col) {},
-  getProgressMode: function(row, col) {},
-  getCellValue: function(row, col) {},
+  getImageSrc: function(row, col) { return null; },
+  getProgressMode: function(row, col) { return null; },
+  getCellValue: function(row, col) { return null; },
   getCellText: function(row, col) {
     switch (col.index) {
     case 0:
@@ -226,7 +238,7 @@ ahCustomizeShortcuts.AquaNaviTreeView.prototype = {
   selectionChanged: function() {},
   cycleCell: function(row, col) {},
   isEditable: function(row, col) { return false; },
-  isSelectable: function(row, col) {},
+  isSelectable: function(row, col) { return true; },
   setCellValue: function(row, col, value) {},
   setCellText: function(row, col, value) {},
   performAction: function(action) {},

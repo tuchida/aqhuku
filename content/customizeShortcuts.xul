@@ -66,14 +66,15 @@
   <hbox align="right">
     <button label="削除" oncommand="ahCustomizeShortcuts.onRemoveShortcut(arguments[0]);" />
   </hbox>
-  <listbox id="shortcuts" rows="10" flex="35">
+  <listbox id="shortcuts" flex="35">
     <listhead>
-      <listheader label="名前" width="200"/>
-      <listheader label="URL" width="200" />
-      <listheader label="キー" width="100"/>
+      <listheader label="名前"/>
+      <listheader label="URL"/>
+      <listheader label="キー"/>
     </listhead>
     <listcols>
-      <listcol/>
+      <listcol flex="1"/>
+      <listcol flex="1"/>
       <listcol flex="1"/>
     </listcols>
   </listbox>
