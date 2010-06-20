@@ -193,16 +193,9 @@ ahNavi = {
   },
 
   createLastMenuItems: function() {
-    let jsonStr = ahUtils.getPrefValue(ahConst.prefs.LAST_AQUA_NAVI_JSON, '');
-    if (jsonStr) {
-      let items = null;
-      try {
-        items = JSON.parse(jsonStr);
-      } catch(e) {
-      }
-      if (items) {
-        this.createMenuItems(items);
-      }
+    let items = ahUtils.parseJSON(ahUtils.getPrefValue(ahConst.prefs.LAST_AQUA_NAVI_JSON, ''));
+    if (items) {
+      this.createMenuItems(items);
     }
   }
 };

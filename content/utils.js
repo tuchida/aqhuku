@@ -163,5 +163,16 @@ ahUtils = {
        return ahUtils.isTextNode(el) && !!el.nodeValue;
     });
     return textNode ? textNode.nodeValue : '';
+  },
+
+  parseJSON: function(str) {
+    if (!str) {
+      return null;
+    }
+    try {
+      return JSON.parse(str);
+    } catch(e) {
+      return null;
+    }
   }
 };

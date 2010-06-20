@@ -25,6 +25,9 @@
   </groupbox>
   <groupbox>
     <caption label="AAEナビ" />
-    <checkbox id="aqua_navi" label="有効にする" checked="true" />
+    <vbox align="left">
+      <checkbox id="aqua_navi" label="有効にする" checked="true" />
+      <button label="ショートカットの設定" style="display: none;" />
+    </vbox>
   </groupbox>
 </dialog>

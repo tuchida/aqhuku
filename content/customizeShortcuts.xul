@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<dialog class="dialog"
+        id="aqhuku_customize_shortcuts_dialog"
+        title="ショートカット 設定"
+        persist="screenX screenY"
+        buttons="accept,cancel"
+        onload="ahCustomizeShortcuts.init();"
+        ondialogaccept="return ahCustomizeShortcuts.term();"
+        orient="vertical"
+        flex="1"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/x-javascript" src="const.js" />
+  <script type="application/x-javascript" src="utils.js" />
+  <script type="application/x-javascript" src="customizeShortcuts.js" />
+
+  <hbox flex="60" >
+    <tree id="aquanavi_tree" flex="90" hidecolumnpicker="true" seltype="single" class="tree" rows="5">
+      <treecols>
+        <treecol primary="true" flex="2" label="項目名" persist="width" ordinal="1"/>
+        <splitter class="tree-splitter" ordinal="2"/>
+        <treecol flex="1" label="URL" persist="width" ordinal="3"/>
+      </treecols>
+      <treechildren />
+    </tree>
+    <vbox flex="10" align="left">
+      <label control="input_key" value="キー" />
+      <textbox
+         id="input_key"
+         emptytext="キーを入力してください"
+         onkeydown="ahCustomizeShortcuts.onSaveShortcutKeyDown(arguments[0]);"
+         onkeyup="this.value=''"/>
+      <menulist id="shortcut_keycode">
+        <menupopup/>
+      </menulist>
+      <grid>
+        <columns>
+          <column flex="1" />
+          <column flex="1" />
+        </columns>
+        <rows>
+          <row>
+            <checkbox id="shortcut_modifiers_alt" checked="false" label="Alt" flex="1" />
+            <checkbox id="shortcut_modifiers_ctrl" checked="false" label="Ctrl" flex="1" />
+          </row>
+          <row>
+            <checkbox id="shortcut_modifiers_meta" checked="false" label="Meta" flex="1" />
+            <checkbox id="shortcut_modifiers_shift" checked="false" label="Shift" flex="1" />
+          </row>
+          </rows>
+      </grid>
+      <spacer />
+      <label control="shortcut_open_type" value="開き方" />
+      <radiogroup id="shortcut_open_type">
+        <radio value="replace" label="開いているタブ" selected="true"/>
+        <radio value="newTab" label="新しいタブ" />
+      </radiogroup>
+      <spacer />
+      <button label="追加" oncommand="ahCustomizeShortcuts.onAddShortcut(arguments[0]);" />
+    </vbox>
+  </hbox>
+
+  <spacer flex="5" />
+  <hbox align="right">
+    <button label="削除" oncommand="ahCustomizeShortcuts.onRemoveShortcut(arguments[0]);" />
+  </hbox>
+  <listbox id="shortcuts" rows="10" flex="35">
+    <listhead>
+      <listheader label="名前" width="200"/>
+      <listheader label="URL" width="200" />
+      <listheader label="キー" width="100"/>
+    </listhead>
+    <listcols>
+      <listcol/>
+      <listcol flex="1"/>
+    </listcols>
+  </listbox>
+</dialog>
