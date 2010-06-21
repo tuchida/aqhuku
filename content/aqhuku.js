@@ -15,9 +15,8 @@ ah = {
 
     let appcontent = document.getElementById("appcontent");
     if (appcontent) {
-      appcontent.addEventListener('DOMContentLoaded', this.onDOMContentLoaded, false);
+      appcontent.addEventListener('DOMContentLoaded', ahUtils.bind(this.onDOMContentLoaded, this), false);
     }
-
     ahNavi.applyPrefs();
     ahNavi.createLastMenuItems();
     let extension = Application.extensions.get(ahConst.DOMAIN);
@@ -97,9 +96,9 @@ ah = {
 
     ahUtils.documentEval(this._aquaDoc, [
       'var xhr = new XMLHttpRequest();',
-      'xhr.open("POST", + "' + serverUrl + ahUtils.makeUUID() + '/edit");',
+      'xhr.open("POST", "' + serverUrl + ahUtils.makeUUID() + '/edit");',
       'xhr.setRequestHeader("Content-Type" , "application/x-www-form-urlencoded");',
-      'xhr.send(' + ahUtils.makePostData(postData) + ');'
+      'xhr.send("' + ahUtils.makePostData(postData) + '");'
     ].join('\n'));
   },
 
